@@ -1,0 +1,15 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+    ), url("../img/florian-krumm-yLDabpoCL3s-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+}
