@@ -6,10 +6,73 @@ html, body {
 
 body {
     background-image: linear-gradient(
-        rgba(0, 0, 0, 0.7),
-        rgba(0, 0, 0, 0.7)
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.85)
     ), url("../img/florian-krumm-yLDabpoCL3s-unsplash.jpg");
     background-repeat: no-repeat;
     background-size: auto;
     background-position: center;
+}
+
+#header {
+    display:block;
+    position: fixed;
+    margin: 0 auto;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    z-index: 5;
+}
+#header .circle {
+    position: relative;
+    height: 15px;
+    width: 15px;
+    margin: 3px;
+    border-radius: 50%;
+    display: inline-block;
+    z-index: 10;
+}
+#header .circle-red {
+    top: 15px;
+    left: 20px;
+    background-color: indianred;
+}
+#header .circle-yellow {
+    top: 15px;
+    left: 20px;
+    background-color: yellow;
+}
+#header .circle-green {
+    top: 15px;
+    left: 20px;
+    background-color: green;
+}
+
+#main {
+    padding: 75px 0 0 0;
+    color: whitesmoke;
+}
+#menu {
+    font-family: 'Barlow', sans-serif;
+    font-size: 110%;
+}
+/*
+.number {
+    display: inline-block;
+    width: 15px;
+    text-align: right;
+    margin: 0 20px;
+}
+.indent-one {
+    text-indent: 45px;
+}
+.indent-two {
+
+}*/
+#numbers {
+    display: inline-block;
+    margin: 0 15px;
+    width: 15px;
+    text-align: right;
+    line-height: 28px;
 }
