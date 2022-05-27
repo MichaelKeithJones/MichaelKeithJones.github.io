@@ -18,17 +18,26 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"');
 
+            /*--| Root |---------------------------------------------------*/
+
+            :root {
+                --original-size: 1rem;
+                --double-size: 2rem;
+                --triple-size: 3rem;
+                --quadruple-size: 4rem;
+            }
+
+            /*--| Main |---------------------------------------------------*/
+
             * {
                 padding: 0;
                 margin: 0;
                 box-sizing: border-box;
             }
-
             html {
                 font-family: 'Montserrat', sans-serif;
                 color: #1a1b1f;
             }
-
             body {
                 width: 100%;
                 height: 100vh;
@@ -181,7 +190,6 @@
             }
 
             nav .overlay {
-                /*background: transparent;*/
                 background: rgba(0, 0, 0, 0.27);
 
                 position: absolute;
@@ -342,10 +350,11 @@
                 background-color: transparent;
 
                 font-family: Montserrat, sans-serif;
-                font-size: 16px;
-                line-height: 28px;
+                margin-bottom: 5px;
+                font-size: 20px;
+                line-height: 34px;
                 font-weight: 400;
-                text-decoration: underline;
+                text-decoration: none;
             }
             .button {
                 padding: 12px 25px;
@@ -391,31 +400,24 @@
                 text-align: center;
             }
 
+            /*--| Banner |---------------------------------------------------*/
+
             .banner-content {
                 height: 460px;
             }
 
-            .content-right {
+            /*--| Skills |---------------------------------------------------*/
+
+            .about-content {
                 display: grid;
                 grid-template-columns: 1fr 350px;
                 grid-template-rows: 100px 1fr;
             }
-            .content-left {
-                display: grid;
-                grid-template-columns: 350px 1fr;
-                grid-template-rows: 100px 1fr;
-            }
-
-            .title-right {
+            .about-title {
                 grid-column: 2 / 3;
                 grid-row: 1 / 2;
             }
-            .title-left {
-                grid-column: 1 / 2;
-                grid-row: 1 / 2;
-            }
-
-            .sub-title-right {
+            .about-sub-title {
                 grid-column: 2 / 3;
                 grid-row: 2 / 3;
 
@@ -423,24 +425,11 @@
                 flex-direction: column;
                 justify-content: center;
             }
-            .sub-title-left {
-                grid-column: 1 / 2;
-                grid-row: 2 / 3;
-
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-
-            .info-right {
+            .about-info {
                 grid-column: 1 / 2;
                 grid-row: 2 / 3;
             }
-            .info-left {
-                grid-column: 2 / 3;
-                grid-row: 2 / 3;
-            }
-            .info-wrapper {
+            .about-info-wrapper {
                 width: 100%;
                 max-width: 550px;
                 margin-right: auto;
@@ -448,128 +437,30 @@
                 padding-right: 25px;
                 line-height: 34px;
             }
-            .skill-wrapper {
-                width: 100%;
-                max-width: 650px;
-                margin-right: auto;
-                margin-left: auto;
-                padding-right: 25px;
-                line-height: 34px;
-            }
 
+            /*--| Skills |---------------------------------------------------*/
 
-            .project-content {
+            .skills-content {
                 display: grid;
-                grid-template-columns: 1fr 350px;
+                grid-template-columns: 350px 1fr;
                 grid-template-rows: 100px 1fr;
             }
-            .project-title {
-                grid-column: 2 / 3;
+            .skills-title {
+                grid-column: 1 / 2;
                 grid-row: 1 / 2;
             }
-            .project-wrapper {
-                grid-column: 1 / 3;
+            .skills-sub-title {
+                grid-column: 1 / 2;
                 grid-row: 2 / 3;
 
                 display: flex;
-                gap: 15px;
-                flex-wrap: wrap;
+                flex-direction: column;
+                justify-content: center;
             }
-
-            .project-wrapper > .project {
-                width: 200px;
-                height: 125px;
+            .skills-info {
+                grid-column: 2 / 3;
+                grid-row: 1 / 3;
             }
-
-            .project-wrapper > .project > img {
-                width: 200px;
-                height: 125px;
-            }
-
-            @media only screen and (max-width: 975px) {
-                .content-right {
-                    grid-template-columns: 1fr 250px;
-                }
-                .content-left {
-                    grid-template-columns: 250px 1fr;
-                }
-                .project-content {
-                    grid-template-columns: 1fr 350px;
-                }
-            }
-
-            @media only screen and (max-width: 745px) {
-                .content-right {
-                    grid-template-columns: 1fr;
-                    grid-template-rows: 100px 1fr 1fr;
-                    text-align: center;
-                }
-
-                .content-left {
-                    grid-template-columns: 1fr;
-                    grid-template-rows: 100px 1fr 1fr;
-                    text-align: center;
-                }
-
-                .title-right {
-                    grid-column: 1 / 2;
-                    grid-row: 1 / 2;
-                }
-                .title-left {
-                    grid-column: 1 / 2;
-                    grid-row: 1 / 2;
-                }
-
-                .sub-title-right {
-                    grid-column: 1 / 2;
-                    grid-row: 2 / 3;
-                }
-                .sub-title-left {
-                    grid-column: 1 / 2;
-                    grid-row: 2 / 3;
-                }
-
-                .info-right {
-                    grid-column: 1 / 2;
-                    grid-row: 3 / 4;
-                }
-                .info-left {
-                    grid-column: 1 / 2;
-                    grid-row: 3 / 4;
-                }
-                .info-wrapper {
-                    width: 100%;
-                    max-width: 550px;
-                    margin-right: auto;
-                    margin-left: auto;
-                    padding: 0 15px;
-                    line-height: 34px;
-                }
-
-                .project-content {
-                    grid-template-columns: 1fr;
-                    grid-template-rows: 100px 1fr;
-                    text-align: center;
-                }
-
-                .project-title {
-                    grid-column: 1 / 2;
-                    grid-row: 1 / 2;
-                }
-
-                .project-wrapper {
-                    grid-column: 1 / 2;
-                    grid-row: 2 / 3;
-
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 15px;
-                }
-
-            }
-
-            /*--| Skills |---------------------------------------------------*/
 
             .word-cloud {
                 display: grid;
@@ -583,8 +474,10 @@
                 '.  sp sp ps ht ht ht ht my ls '
                 'js js js ps ht ht ht ht my cp '
                 '.  .  .  ps cn cn cn gt my .  '
-                '.  .  .  ps .  .  .  gt op .  ';
-            '.  .  .  ps .  .  .  .  .  .  ';
+                '.  .  .  ps .  .  .  gt op .  '
+                '.  .  .  ps .  .  .  .  .  .  ';
+
+                scale: 1.1;
             }
             .word-cloud > #html {
                 grid-area: ht;
@@ -613,21 +506,179 @@
 
             .word-cloud > div { color: whitesmoke; }
             .word-cloud :nth-child(2n) {
-                font-size: 2rem;
+                font-size: var(--double-size);
                 color: #38aecc;
                 font-weight: bold;
             }
             .word-cloud :nth-child(3n) {
+                font-size: var(--original-size);
                 writing-mode: vertical-lr;
                 color: #0090c1;
             }
             .word-cloud :nth-child(4n) {
-                font-size: 3rem;
+                font-size: var(--triple-size);
                 color: #183446;
             }
             .word-cloud :nth-child(5n) {
-                font-size: 4rem;
+                font-size: var(--quadruple-size);
                 color: #046e8f;
+            }
+
+            /*--| Projects |---------------------------------------------------*/
+
+            .project-content {
+                display: grid;
+                grid-template-columns: 1fr 350px;
+                grid-template-rows: 150px 1fr;
+            }
+            .project-title {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+            }
+            .project-wrapper {
+                grid-column: 1 / 3;
+                grid-row: 2 / 3;
+
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .project-wrapper > .project {
+                width: 350px;
+                height: 250px;
+                text-align: center;
+            }
+            .project-wrapper > .project > a {
+                margin-top: 10px;
+            }
+            .project-wrapper > .project > img {
+                width: 350px;
+                height: 175px;
+                box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+                0 2px 2px hsl(0deg 0% 0% / 0.075),
+                0 4px 4px hsl(0deg 0% 0% / 0.075),
+                0 8px 8px hsl(0deg 0% 0% / 0.075),
+                0 16px 16px hsl(0deg 0% 0% / 0.075);
+            }
+
+            /*--| Media Queries |--------------------------------------------*/
+
+            @media only screen and (max-width: 1145px) {
+                .skills-content {grid-template-columns: 250px 1fr;}
+                .word-cloud {scale: 1.0;}
+
+                .project-title {
+                    grid-column: 1 / 3;
+                    grid-row: 1 / 2;
+
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+
+            @media only screen and (max-width: 975px) {
+                .about-content {
+                    grid-template-columns: 1fr 250px;
+                }
+
+                .skills-content {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 100px 1fr 1fr;
+                    text-align: center;
+                }
+                .skills-title {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2;
+                }
+                .skills-sub-title {
+                    grid-column: 1 / 2;
+                    grid-row: 2 / 3;
+                }
+                .skills-info {
+                    grid-column: 1 / 2;
+                    grid-row: 3 / 4;
+                }
+            }
+
+            @media only screen and (max-width: 745px) {
+                .about-content {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 100px 1fr 1fr;
+                    text-align: center;
+                }
+                .about-title {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2;
+                }
+                .about-sub-title {
+                    grid-column: 1 / 2;
+                    grid-row: 2 / 3;
+                }
+                .about-info {
+                    grid-column: 1 / 2;
+                    grid-row: 3 / 4;
+                }
+                .about-info-wrapper {
+                    width: 100%;
+                    max-width: 550px;
+                    margin-right: auto;
+                    margin-left: auto;
+                    padding: 0 15px;
+                    line-height: 34px;
+                }
+
+                .word-cloud {
+                    display: grid;
+                    justify-content: center;
+                    align-content: center;
+                    gap: 10px;
+
+                    grid-template:
+                '. ht .  my . cn . '
+                '. cs .  op . ls . '
+                '. js .  td . ps . '
+                '. ja .  cp . pp  . '
+                '. sp .  gt . .  . '
+                '. .  .  .  . .  . ';
+                }
+                .word-cloud > div { color: #0090c1; }
+                .word-cloud :nth-child(2n) {
+                    font-size: var(--original-size);
+                    font-weight: normal;
+                    color: #0090c1;
+                }
+                .word-cloud :nth-child(3n) {
+                    font-size: var(--original-size);
+                    writing-mode: unset;
+                    color: #0090c1;
+                }
+                .word-cloud :nth-child(4n) {
+                    font-size: var(--original-size);
+                    color: #0090c1;
+                }
+                .word-cloud :nth-child(5n) {
+                    font-size: var(--original-size);
+                    color: #0090c1;
+                }
+
+                .project-content {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 150px 1fr;
+                    text-align: center;
+                }
+                .project-title {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2;
+                }
+                .project-wrapper {
+                    grid-column: 1 / 2;
+                    grid-row: 2 / 3;
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 35px;
+                }
             }
 
             /*--| Footer |---------------------------------------------------*/
@@ -682,17 +733,17 @@
             </div>
             <div class="container">
                 <div class="block">
-                    <div class="content-right">
-                        <div class="title-right">
+                    <div class="about-content">
+                        <div class="about-title">
                             <div class="heading-jumbo vertical-center">ABOUT</div>
                         </div>
-                        <div class="sub-title-right">
+                        <div class="about-sub-title">
                             <p class="paragraph-bigger muted">Problem-Solver.</p>
                             <p class="paragraph-bigger muted">Communicator.</p>
                             <p class="paragraph-bigger muted">Leader.</p>
                         </div>
-                        <div class="info-right">
-                            <div class="info-wrapper">
+                        <div class="about-info">
+                            <div class="about-info-wrapper">
                                 <p>A detailed-oriented Marine Corps Veteran and Software
                                     Developer with strong critical-thinking skills, and a passion for learning and
                                     computer programming. I hope to contribute technical, professional, and 20 years of
@@ -706,39 +757,37 @@
             <div class="hero-banner vertical-center">
                 <div class="container">
                     <div class="block">
-                        <div class="content-left">
-                            <div class="title-left">
+                        <div class="skills-content">
+                            <div class="skills-title">
                                 <div class="heading-jumbo vertical-center">SKILLS</div>
                             </div>
-                            <div class="sub-title-left">
+                            <div class="skills-sub-title">
                                 <p class="paragraph-bigger light-muted">Front-End.</p>
                                 <p class="paragraph-bigger light-muted">Back-End.</p>
                                 <p class="paragraph-bigger light-muted">Full-Stack.</p>
                             </div>
-                            <div class="info-left">
-                                <div class="skill-wrapper">
-                                    <div class="word-cloud">
-                                        <div id="communication">Communication</div>
-                                        <div id="cpp">C++</div>
-                                        <div id="problem-solving">Problem-Solving</div>
-                                        <div id="spring">Spring</div>
-                                        <div id="html">HTML</div>
-                                        <div id="git">Git</div>
-                                        <div id="paired-programming">Paired Programming</div>
-                                        <div id="css">CSS</div>
-                                        <div id="tdd">TDD</div>
-                                        <div id="java">Java</div>
-                                        <div id="oop">OOP</div>
-                                        <div id="mysql">MySQL</div>
-                                        <div id="leadership">Leadership</div>
-                                        <div id="javascript">JavaScript</div>
-                                    </div>
+                            <div class="skills-info">
+                                <div class="word-cloud">
+                                    <div id="communication">Communication</div>
+                                    <div id="cpp">C++</div>
+                                    <div id="problem-solving">Problem-Solving</div>
+                                    <div id="spring">Spring</div>
+                                    <div id="html">HTML</div>
+                                    <div id="git">Git</div>
+                                    <div id="paired-programming">Paired Programming</div>
+                                    <div id="css">CSS</div>
+                                    <div id="tdd">TDD</div>
+                                    <div id="java">Java</div>
+                                    <div id="oop">OOP</div>
+                                    <div id="mysql">MySQL</div>
+                                    <div id="leadership">Leadership</div>
+                                    <div id="javascript">JavaScript</div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
-        </div>
             <div class="container">
                 <div class="block">
                     <div class="project-content">
@@ -746,9 +795,21 @@
                             <div class="heading-jumbo vertical-center">PROJECTS</div>
                         </div>
                         <div class="project-wrapper">
-                            <div class="project"><img /></div>
-                            <div class="project"><img /></div>
-                            <div class="project"><img /></div>
+                            <div class="project">
+                                <img src="img/watchlist.png" alt="Watchlist - Frontend"/>
+                                <a class="text-link" href="https://michaelkeithjones.github.io/movie-project-html/">Watchlist</a>
+                                <div class="paragraph-muted">Front-End</div>
+                            </div>
+                            <div class="project">
+                                <img src="img/weather.png" alt="Weather - Frontend"/>
+                                <a class="text-link" href="https://michaelkeithjones.github.io/movie-project-html/">Weather App</a>
+                                <div class="paragraph-muted">Front-End</div>
+                            </div>
+                            <div class="project">
+                                <img src="img/shopping.png" alt="Shopping Template - Fullstack"/>
+                                <a class="text-link" href="https://michaelkeithjones.github.io/movie-project-html/">Shopping Template</a>
+                                <div class="paragraph-muted">Full-Stack</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -766,13 +827,11 @@
                                 <p class="paragraph-bigger light-muted">Full-Stack.</p>
                             </div>
                             <div class="info-left">
-                                <div class="info-wrapper">
-                                    <p>A detailed-oriented Marine Corps Veteran and Software
-                                        Developer with strong critical-thinking skills, and a passion for learning and
-                                        computer programming. I hope to contribute technical, professional, and 20 years of
-                                        leadership skills to a new team while honing old and new skills.
-                                    </p>
-                                </div>
+                                <p>A detailed-oriented Marine Corps Veteran and Software
+                                    Developer with strong critical-thinking skills, and a passion for learning and
+                                    computer programming. I hope to contribute technical, professional, and 20 years of
+                                    leadership skills to a new team while honing old and new skills.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -782,8 +841,8 @@
 
         <footer>
             <div class="social">
-                <a class="" href="" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                <a class="" href="" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                <a class="" href="https://www.linkedin.com/in/michaelkeithjones/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a class="" href="https://github.com/MichaelKeithJones" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
             </div>
         </footer>
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
