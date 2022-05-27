@@ -561,6 +561,44 @@
                 0 16px 16px hsl(0deg 0% 0% / 0.075);
             }
 
+            /*--| Contact |---------------------------------------------------*/
+            .contact-content {
+                display: grid;
+                grid-template-columns: 350px 1fr;
+                grid-template-rows: 100px 1fr;
+            }
+            .contact-title {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                text-align: center;
+            }
+            .contact-sub-title {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-info {
+                grid-column: 2 / 3;
+                grid-row: 1 / 3;
+            }
+
+            .sections{
+                margin-top: 60px;
+
+                display: grid;
+                grid-template-areas: ". . . .";
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-auto-columns: 1fr;
+                grid-column-gap: 30px;
+                grid-template-rows: auto;
+                grid-row-gap: 30px;
+
+                text-align: center;
+            }
+
             /*--| Media Queries |--------------------------------------------*/
 
             @media only screen and (max-width: 1145px) {
@@ -763,7 +801,7 @@
                                 <p class="paragraph-bigger light-muted">Full-Stack.</p>
                             </div>
                             <div class="skills-info">
-<!--                                <div class="word-cloud">-->
+                                <div class="word-cloud">
                                     <div id="communication">Communication</div>
                                     <div id="cpp">C++</div>
                                     <div id="problem-solving">Problem-Solving</div>
@@ -778,7 +816,7 @@
                                     <div id="mysql">MySQL</div>
                                     <div id="leadership">Leadership</div>
                                     <div id="javascript">JavaScript</div>
-<!--                                </div>--> 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -813,21 +851,13 @@
             <div class="hero-banner vertical-center">
                 <div class="container">
                     <div class="block">
-                        <div class="content-left">
-                            <div class="title-left">
+                        <div class="contact-content">
+                            <div class="contact-title">
                                 <div class="heading-jumbo vertical-center">CONTACT</div>
                             </div>
-                            <div class="sub-title-left">
-                                <p class="paragraph-bigger light-muted">Front-End.</p>
-                                <p class="paragraph-bigger light-muted">Back-End.</p>
-                                <p class="paragraph-bigger light-muted">Full-Stack.</p>
-                            </div>
-                            <div class="info-left">
-                                <p>A detailed-oriented Marine Corps Veteran and Software
-                                    Developer with strong critical-thinking skills, and a passion for learning and
-                                    computer programming. I hope to contribute technical, professional, and 20 years of
-                                    leadership skills to a new team while honing old and new skills.
-                                </p>
+                            <div class="contact-sub-title">
+                                <div class="header">Email</div>
+                                <a class="para-link href="michael.k.jones.20@gmail.com">michael.k.jones.20@gmail.com</a>
                             </div>
                         </div>
                     </div>
