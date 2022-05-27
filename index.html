@@ -32,6 +32,9 @@
             body {
                 width: 100%;
                 height: 100vh;
+
+                display: grid;
+                grid-template-rows: 1fr auto;
             }
 
             /*--| Navbar |---------------------------------------------------*/
@@ -46,7 +49,7 @@
                 position: relative;
                 z-index: 2;
 
-                padding: 30px 50px 0;
+                padding: 30px 50px 15px;
 
                 background: white;
 
@@ -83,12 +86,14 @@
                 text-transform: uppercase;
             }
             nav .content > .links {
+                background: white;
                 grid-column: 2 / 3;
 
                 display: flex;
                 justify-content: end;
             }
             nav .content > .links > .link {
+                background: white;
                 position: relative;
                 color: darkgrey;
 
@@ -313,7 +318,7 @@
                 font-weight: 400;
             }
             .paragraph-muted {
-                opacity: 0.6;
+                color: rgba(0, 0, 0, 0.6);
             }
             .paragraph-smaller {
                 font-size: 14px;
@@ -368,7 +373,8 @@
                 line-height: 26px;
             }
 
-            .muted {opacity: 0.6;}
+            .muted {color: rgba(0, 0, 0, 0.6);}
+            .light-muted {color: rgba(255, 255, 255, 0.6);}
 
             .divider {
                 height: 1px;
@@ -398,15 +404,6 @@
                 display: grid;
                 grid-template-columns: 350px 1fr;
                 grid-template-rows: 100px 1fr;
-            }
-
-            @media only screen and (max-width: 975px) {
-                .content-right {
-                    grid-template-columns: 1fr 250px;
-                }
-                .content-left {
-                    grid-template-columns: 250px 1fr;
-                }
             }
 
             .title-right {
@@ -450,6 +447,55 @@
                 margin-left: auto;
                 padding-right: 25px;
                 line-height: 34px;
+            }
+            .skill-wrapper {
+                width: 100%;
+                max-width: 650px;
+                margin-right: auto;
+                margin-left: auto;
+                padding-right: 25px;
+                line-height: 34px;
+            }
+
+
+            .project-content {
+                display: grid;
+                grid-template-columns: 1fr 350px;
+                grid-template-rows: 100px 1fr;
+            }
+            .project-title {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+            }
+            .project-wrapper {
+                grid-column: 1 / 3;
+                grid-row: 2 / 3;
+
+                display: flex;
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .project-wrapper > .project {
+                width: 200px;
+                height: 125px;
+            }
+
+            .project-wrapper > .project > img {
+                width: 200px;
+                height: 125px;
+            }
+
+            @media only screen and (max-width: 975px) {
+                .content-right {
+                    grid-template-columns: 1fr 250px;
+                }
+                .content-left {
+                    grid-template-columns: 250px 1fr;
+                }
+                .project-content {
+                    grid-template-columns: 1fr 350px;
+                }
             }
 
             @media only screen and (max-width: 745px) {
@@ -499,19 +545,105 @@
                     padding: 0 15px;
                     line-height: 34px;
                 }
+
+                .project-content {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 100px 1fr;
+                    text-align: center;
+                }
+
+                .project-title {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2;
+                }
+
+                .project-wrapper {
+                    grid-column: 1 / 2;
+                    grid-row: 2 / 3;
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 15px;
+                }
+
             }
 
-            .vertical-270 {
-                display: inline-block;
-                transform: rotate(270deg);
+            /*--| Skills |---------------------------------------------------*/
+
+            .word-cloud {
+                display: grid;
+                justify-content: center;
+                align-content: center;
+                gap: 3px;
+
+                grid-template:
+                '.  .  pp pp pp cs .  .  my ja '
+                '.  sp sp ps .  cs .  td my ja '
+                '.  sp sp ps ht ht ht ht my ls '
+                'js js js ps ht ht ht ht my cp '
+                '.  .  .  ps cn cn cn gt my .  '
+                '.  .  .  ps .  .  .  gt op .  ';
+            '.  .  .  ps .  .  .  .  .  .  ';
+            }
+            .word-cloud > #html {
+                grid-area: ht;
+                display: grid;
+                justify-content: center;
+                align-content: center;
+            }
+            .word-cloud > #css {
+                grid-area: cs;
+                display: grid;
+                justify-content: center;
+                align-content: center;
+            }
+            .word-cloud > #javascript {grid-area: js;}
+            .word-cloud > #java {grid-area: ja;}
+            .word-cloud > #spring {grid-area: sp;}
+            .word-cloud > #mysql {grid-area: my;}
+            .word-cloud > #paired-programming {grid-area: pp;}
+            .word-cloud > #oop {grid-area: op;}
+            .word-cloud > #tdd {grid-area: td;}
+            .word-cloud > #git {grid-area: gt;}
+            .word-cloud > #cpp {grid-area: cp;}
+            .word-cloud > #communication {grid-area: cn;}
+            .word-cloud > #leadership {grid-area: ls;}
+            .word-cloud > #problem-solving {grid-area: ps;}
+
+            .word-cloud > div { color: whitesmoke; }
+            .word-cloud :nth-child(2n) {
+                font-size: 2rem;
+                color: #38aecc;
+                font-weight: bold;
+            }
+            .word-cloud :nth-child(3n) {
+                writing-mode: vertical-lr;
+                color: #0090c1;
+            }
+            .word-cloud :nth-child(4n) {
+                font-size: 3rem;
+                color: #183446;
+            }
+            .word-cloud :nth-child(5n) {
+                font-size: 4rem;
+                color: #046e8f;
             }
 
-            .skills-tech {
-                color: cadetblue;
-            }
+            /*--| Footer |---------------------------------------------------*/
 
-            .skills-soft {
-                color: mediumpurple;
+            footer {
+                height: 100px;
+                padding: 0 100px;
+
+                display: flex;
+                justify-content: end;
+                align-items: center;
+            }
+            footer > .social {
+                scale: 2;
+                display: flex;
+                gap: 20px;
             }
 
         </style>
@@ -545,7 +677,7 @@
             <div class="hero-banner banner-content vertical-center">
                 <div class="container">
                     <div class="heading-jumbo">Hi, I'm Michael Jones</div>
-                    <p class="paragraph-bigger muted">Full-Stack Developer.</p>
+                    <p class="paragraph-bigger light-muted">Full-Stack Developer.</p>
                 </div>
             </div>
             <div class="container">
@@ -579,32 +711,28 @@
                                 <div class="heading-jumbo vertical-center">SKILLS</div>
                             </div>
                             <div class="sub-title-left">
-                                <p class="paragraph-bigger muted">Front-End.</p>
-                                <p class="paragraph-bigger muted">Back-End.</p>
-                                <p class="paragraph-bigger muted">Full-Stack.</p>
+                                <p class="paragraph-bigger light-muted">Front-End.</p>
+                                <p class="paragraph-bigger light-muted">Back-End.</p>
+                                <p class="paragraph-bigger light-muted">Full-Stack.</p>
                             </div>
                             <div class="info-left">
-                                <div class="info-wrapper">
-                                    <p>
-                                        <span class="skills-tech">HTML</span>
-                                        <span class="skills-tech">CSS</span>
-                                        <span class="skills-tech">Bootstrap</span>
-                                        <span class="skills-tech">JavaScript</span>
-                                        <span class="skills-tech">jQuery</span>
-                                        <span class="skills-tech">Fetch API</span>
-                                        <span class="skills-tech">Java</span>
-                                        <span class="skills-tech">Servlets</span>
-                                        <span class="skills-tech">JSP</span>
-                                        <span class="skills-tech">JSTL</span>
-                                        <span class="skills-tech">Spring</span>
-                                        <span class="skills-tech">MySQL</span>
-                                        <span class="skills-tech">Thymeleaf</span>
-                                        <span class="skills-tech">OOP</span>
-                                        <span class="skills-tech">TDD</span>
-                                        <span class="skills-tech">Git</span>
-                                        <span class="skills-tech">Paired Programming</span>
-                                        <span class="skills-tech">C++</span>
-                                    </p>
+                                <div class="skill-wrapper">
+                                    <div class="word-cloud">
+                                        <div id="communication">Communication</div>
+                                        <div id="cpp">C++</div>
+                                        <div id="problem-solving">Problem-Solving</div>
+                                        <div id="spring">Spring</div>
+                                        <div id="html">HTML</div>
+                                        <div id="git">Git</div>
+                                        <div id="paired-programming">Paired Programming</div>
+                                        <div id="css">CSS</div>
+                                        <div id="tdd">TDD</div>
+                                        <div id="java">Java</div>
+                                        <div id="oop">OOP</div>
+                                        <div id="mysql">MySQL</div>
+                                        <div id="leadership">Leadership</div>
+                                        <div id="javascript">JavaScript</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -613,23 +741,14 @@
         </div>
             <div class="container">
                 <div class="block">
-                    <div class="content-right">
-                        <div class="title-right">
+                    <div class="project-content">
+                        <div class="project-title">
                             <div class="heading-jumbo vertical-center">PROJECTS</div>
                         </div>
-                        <div class="sub-title-right">
-                            <p class="paragraph-bigger muted">Problem-Solver.</p>
-                            <p class="paragraph-bigger muted">Communicator.</p>
-                            <p class="paragraph-bigger muted">Leader.</p>
-                        </div>
-                        <div class="info-right">
-                            <div class="info-wrapper">
-                                <p>A detailed-oriented Marine Corps Veteran and Software
-                                    Developer with strong critical-thinking skills, and a passion for learning and
-                                    computer programming. I hope to contribute technical, professional, and 20 years of
-                                    leadership skills to a new team while honing old and new skills.
-                                </p>
-                            </div>
+                        <div class="project-wrapper">
+                            <div class="project"><img /></div>
+                            <div class="project"><img /></div>
+                            <div class="project"><img /></div>
                         </div>
                     </div>
                 </div>
@@ -642,9 +761,9 @@
                                 <div class="heading-jumbo vertical-center">CONTACT</div>
                             </div>
                             <div class="sub-title-left">
-                                <p class="paragraph-bigger muted">Front-End.</p>
-                                <p class="paragraph-bigger muted">Back-End.</p>
-                                <p class="paragraph-bigger muted">Full-Stack.</p>
+                                <p class="paragraph-bigger light-muted">Front-End.</p>
+                                <p class="paragraph-bigger light-muted">Back-End.</p>
+                                <p class="paragraph-bigger light-muted">Full-Stack.</p>
                             </div>
                             <div class="info-left">
                                 <div class="info-wrapper">
@@ -659,7 +778,14 @@
                     </div>
                 </div>
             </div>
+        </div>
 
+        <footer>
+            <div class="social">
+                <a class="" href="" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a class="" href="" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+            </div>
+        </footer>
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         <script>
             (() => {
