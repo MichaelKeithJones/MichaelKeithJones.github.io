@@ -252,22 +252,6 @@
                 line-height: 80px;
                 text-transform: none;
             }
-            .heading-jumbo-small {
-                margin-top: 10px;
-                margin-bottom: 15px;
-                font-size: 36px;
-                line-height: 50px;
-                font-weight: 400;
-                text-transform: none;
-            }
-            .heading-jumbo-tiny {
-                margin-top: 10px;
-                margin-bottom: 10px;
-                font-size: 18px;
-                line-height: 32px;
-                font-weight: 500;
-                text-transform: uppercase;
-            }
 
             h1 {
                 margin-top: 20px;
@@ -328,21 +312,7 @@
             .paragraph-muted {
                 color: rgba(0, 0, 0, 0.6);
             }
-            .paragraph-smaller {
-                font-size: 14px;
-                line-height: 26px;
-            }
-            .paragraph-tiny {
-                font-size: 12px;
-                line-height: 20px;
-            }
-            .label {
-                font-size: 12px;
-                line-height: 20px;
-                font-weight: 500;
-                letter-spacing: 1px;
-                text-transform: uppercase;
-            }
+
             .text-link {
                 display: block;
                 transition: opacity 200ms ease;
@@ -356,48 +326,14 @@
                 font-weight: 400;
                 text-decoration: none;
             }
-            .button {
-                padding: 12px 25px;
-                border-radius: 0;
-
-                color: #fff;
-                background-color: #1a1b1f;
-                transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
-
-                font-size: 12px;
-                line-height: 20px;
-                letter-spacing: 2px;
-                text-decoration: none;
-                text-transform: uppercase;
-
-                display: inline-block;
-            }
-            .button:hover {
-                background-color: #32343a;
-                color: #fff;
-            }
-            .button-bigger {
-                padding: 16px 35px;
-                font-size: 14px;
-                line-height: 26px;
-            }
 
             .muted {color: rgba(0, 0, 0, 0.6);}
             .light-muted {color: rgba(255, 255, 255, 0.6);}
-
-            .divider {
-                height: 1px;
-                background-color: #eee;
-            }
 
             .vertical-center {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-            }
-
-            .text-center {
-                text-align: center;
             }
 
             /*--| Banner |---------------------------------------------------*/
@@ -545,6 +481,7 @@
                 width: 350px;
                 height: 250px;
                 text-align: center;
+                text-decoration: none;
             }
             .project-wrapper > .project > a {
                 margin-top: 10px;
@@ -809,21 +746,21 @@
                             <div class="heading-jumbo vertical-center">PROJECTS</div>
                         </div>
                         <div class="project-wrapper">
-                            <div class="project">
+                            <a class="project" href="https://michaelkeithjones.github.io/movie-project-html/">
                                 <img src="img/watchlist.png" alt="Watchlist - Frontend"/>
-                                <a class="text-link" href="https://michaelkeithjones.github.io/movie-project-html/">Watchlist</a>
+                                <span class="text-link" >Watchlist</span>
                                 <div class="paragraph-muted">Front-End</div>
-                            </div>
-                            <div class="project">
+                            </a>
+                            <a class="project" href="https://michaelkeithjones.github.io/weather-project-html/">
                                 <img src="img/weather.png" alt="Weather - Frontend"/>
-                                <a class="text-link" href="https://michaelkeithjones.github.io/movie-project-html/">Weather App</a>
+                                <span class="text-link">Weather App</span>
                                 <div class="paragraph-muted">Front-End</div>
-                            </div>
-                            <div class="project">
+                            </a>
+                            <a class="project" href="https://github.com/MichaelKeithJones/shopping-servlet-java">
                                 <img src="img/shopping.png" alt="Shopping Template - Fullstack"/>
-                                <a class="text-link" href="https://michaelkeithjones.github.io/movie-project-html/">Shopping Template</a>
+                                <span class="text-link">Shopping Template</span>
                                 <div class="paragraph-muted">Full-Stack</div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -837,7 +774,7 @@
                             </div>
                             <div class="contact-sub-title">
                                 <div class="header">Email</div>
-                                <a class="para-link href="michael.k.jones.20@gmail.com">michael.k.jones.20@gmail.com</a>
+                                <a class="para-link" href="michael.k.jones.20@gmail.com">michael.k.jones.20@gmail.com</a>
                             </div>
                         </div>
                     </div>
